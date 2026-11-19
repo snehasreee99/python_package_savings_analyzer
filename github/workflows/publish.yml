@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
-      id-token: write   # required for Trusted Publishing
+      id-token: write
+
+    defaults:
+      run:
+        working-directory: savings_analyzer_pkg   # <-- points into your subfolder
 
     steps:
       - uses: actions/checkout@v4
@@ -27,3 +31,6 @@ jobs:
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: savings_analyzer_pkg/dist
+          
