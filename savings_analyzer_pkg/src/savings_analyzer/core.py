@@ -1,4 +1,3 @@
-"""core.py - function definitions for the Monthly Savings Analyzer."""
 
 
 def _validate_number(value, name):
